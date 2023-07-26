@@ -1,4 +1,4 @@
-1. ## Крок 1
+### Крок 1
 
 - Ініціалізується npm в проекті
 - В корені проекту створи файл `index.js`
@@ -9,7 +9,8 @@
   - Скрипт `start` який запускає `index.js` за допомогою `node`
   - Скрипт `dev` який запускає `index.js` за допомогою `nodemon`
 
-2. ## Крок 2
+
+### Крок 2
 
 У корені проекту створи папку `db`. Для зберігання контактів завантаж і
 використовуй файл [contacts.json](./contacts.json), поклавши його в папку `db`.
@@ -50,12 +51,12 @@ function addContact(name, email, phone) {
 }
 ```
 
-3. ## Крок 3
+### Крок 3
 
 Зроби імпорт модуля `contacts.js` в файлі `index.js` та перевір працездатність
 функцій для роботи з контактами.
 
-4. ## Крок 4
+### Крок 4
 
 У файлі `index.js` імпортується пакет `yargs` для зручного парсу аргументів
 командного рядка. Використовуй готову функцію `invokeAction()` яка отримує тип
@@ -138,7 +139,7 @@ function invokeAction({ action, id, name, email, phone }) {
 invokeAction(argv);
 ```
 
-5. ## Крок 5
+### Крок 5
 
 Запусти команди в терміналі і зроби окремий скріншот результату виконання кожної
 команди.
@@ -157,7 +158,7 @@ node index.js --action="add" --name Mango --email mango@gmail.com --phone 322-22
 node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH
 ```
 
-6. ## Крок 6 - Здача домашнього завдання.
+### Крок 6 - Здача домашнього завдання.
 
 Скріншоти виконання команд, можна залити на будь-який безкоштовний хмарний
 сервіс зберігання картинок (Приклад: [monosnap](https://monosnap.com/),
@@ -167,7 +168,7 @@ README.md. Створіть цей файл в корені проекту. Пі
 перевірки ментором. Також у файл README.md треба додати посилання на репозиторій
 зі зробленою роботою.
 
-## Критерії прийому
+### Критерії прийому
 
 - Створено репозиторій з домашнім завданням &mdash; CLI додаток
 - Завдання відправлено менторові в [schoology](https://app.schoology.com/login)
@@ -180,20 +181,34 @@ README.md. Створіть цей файл в корені проекту. Пі
 - У коді немає закоментованих ділянок коду
 - Проект коректно працює з актуальною LTS-версією Node
 
-7. ## Cкріншоти
-
+### Cкріншоти
+---
+```shell
+# Screen-1 - oтримуємо і виводимо весь список контактів у вигляді таблиці (console.table)
+node index.js --action="list"
+```
 ![Screen-1](./screenshots/Screen-1.PNG)
 
 ---
-
-![Screen-1](./screenshots/Screen-2.PNG)
+```shell
+# Screen-2 - oтримуємо контакт по id і виводимо у консоль об'єкт контакта або null якщо контакту з таким id не існує
+node index.js --action="get" --id 05olLMgyVQdWRwgKfg5J6
+```
+![Screen-2](./screenshots/Screen-2.PNG)
 
 ---
-
-![Screen-1](./screenshots/Screen-3.PNG)
+```shell
+# Screen-3 - додаємо контакт та виводимо в консоль об'єкт новоствореного контакту
+node index.js --action="add" --name Mango --email mango@gmail.com --phone 322-22-22
+```
+![Screen-3](./screenshots/Screen-3.PNG)
 
 ---
+```shell
+# Screen-4 - видаляємо контакт та виводимо в консоль об'єкт видаленого контакту або null якщо контакту з таким id не існує
+node index.js --action="remove" --id qdggE76Jtbfd9eWJHrssH
+```
 
-![Screen-1](./screenshots/Screen-4.PNG)
+![Screen-4](./screenshots/Screen-4.PNG)
 
 
